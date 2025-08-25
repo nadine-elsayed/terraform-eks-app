@@ -21,7 +21,7 @@ resource "aws_iam_role" "eks_cluster_role" {
   name = "nadine-eks-cluster-role"
 
   assume_role_policy = jsonencode({
-    Version   = "2012-10-17"
+    Version = "2012-10-17"
     Statement = [{
       Effect    = "Allow"
       Principal = { Service = "eks.amazonaws.com" }
@@ -53,9 +53,9 @@ resource "aws_eks_cluster" "nadine_cluster" {
   }
 
   access_config {
-  authentication_mode                   = "API_AND_CONFIG_MAP"
-  bootstrap_cluster_creator_admin_permissions = true
-}
+    authentication_mode                         = "API_AND_CONFIG_MAP"
+    bootstrap_cluster_creator_admin_permissions = true
+  }
 
 
   depends_on = [
@@ -71,7 +71,7 @@ resource "aws_iam_role" "eks_node_role" {
   name = "nadine-eks-node-role"
 
   assume_role_policy = jsonencode({
-    Version   = "2012-10-17"
+    Version = "2012-10-17"
     Statement = [{
       Effect    = "Allow"
       Principal = { Service = "ec2.amazonaws.com" }
