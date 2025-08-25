@@ -42,7 +42,7 @@ jobs:
         run: terraform apply -auto-approve
 
       - name: Update kubeconfig for EKS
-        run: aws eks update-kubeconfig --region us-east-1 --name nadine-cluster
+        run: aws eks update-kubeconfig --region us-east-1 --name nadine-cluster2
 
       - name: Apply Kubernetes manifests
         run: kubectl apply -f k8/
