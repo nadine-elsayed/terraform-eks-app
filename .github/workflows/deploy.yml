@@ -46,4 +46,4 @@ jobs:
           aws eks update-kubeconfig --region us-east-1 --name nadine-cluster
 
       - name: Apply Kubernetes manifests
-        run: kubectl apply -f k8s/
+        run: kubectl apply -f k8/
